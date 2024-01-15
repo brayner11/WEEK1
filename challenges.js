@@ -1,3 +1,5 @@
+//WEEK 1
+
 //1
 
 let breakfast = 'cereals'
@@ -6,7 +8,7 @@ let dinner = 'fruit salad'
 
 console.log(`Today i had breakfast ${breakfast}, for lunch i had ${luch} and for dinner i ate ${dinner}.`)
 
-//
+// 2
 
 let num1 = 15
 
@@ -56,3 +58,73 @@ for (let i = 0; i < 6; i++) {
 for (let i = 9; i >= 0; i--) {
     console.log(i)
 }
+
+// WEEK 2 DAY 1
+
+// ACTIVITY 1
+let person = {
+    name:"brayner",
+    age: 23,
+    favoriteSongs: [
+        "Gorrillaz - feel good inc",
+        "eiffel65 - blue (da ba dee da ba dai)",
+        "Metronomy - the bay"
+    ],
+    likesFootball : true,
+    sayHi(){
+        return `hello my name is ${this.name}`
+    },
+    doesLikeFotball() {
+        if (this.likesFootball){
+            return 'leon definitely likes football'
+        }
+    }
+}
+console.log(person.sayHi())
+
+// ACTIVITY 2
+
+let pet = {
+    name : "boby",
+    typeOfPet : "labrador",
+    age : 3,
+    colour : "white",
+    eat : function() {
+        return `${this.name} is eating`
+    },
+    drink : function() {
+        return `${this.name} is drinking`
+    }
+}
+
+console.log(pet.eat())
+console.log(pet.drink())
+
+// ACTIVITY 3
+
+let coffeeShop = {
+    branch : "java coffe",
+    drinks : {
+        latte: 3.00,
+        capuccino: 2.50,
+        espresso: 2.00
+    },
+    food : {
+        sandwich : 3.50,
+        croissant : 2.50,
+        hashBrown : 4.50
+    },
+    drinksOrdered: function(order){
+        let totalCost = order.reduce((total, item) => total + this.drinks[item], 0)
+        return `Drinks Ordered: ${order.join(', ')} | Total Cost: $${totalCost.toFixed(2)}`
+    },
+    foodOrdered: function(order) {
+        let totalCost = order.reduce((total, item) => total + this.food[item], 0)
+        return `Food Ordered: ${order.join(', ')} | Total Cost: $${totalCost.toFixed(2)}`
+      }
+}
+let drinkOrder = ["latte",]
+let foodOrder = ["croissant"]
+console.log(coffeeShop.drinksOrdered(drinkOrder))
+console.log (coffeeShop.foodOrdered(foodOrder))
+
